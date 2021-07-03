@@ -1,0 +1,26 @@
+#sidebarContainer {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  width: 300px;
+  height: 600px;
+}
+#details {
+  display: flex;
+  border: 1px solid black;
+}
+#actionsBar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#actionsList {
+  align-items: center;
+}
+.actionButtons {
+  display: flex;
+  padding: 4px;
+  margin: 6px;
+  font-size: 20px;
+  align-items: center;
+}

@@ -1,12 +1,17 @@
 import React from "react";
 import { auth } from "../firebase";
+import Navbar from "./NavBar.js";
+import Sidebar from "./Sidebar.js";
+import TweetDisplay from "./tweetsDisplay.js";
+import "./styleSheets/home.css";
 const Home = () => {
   return (
     <div>
-      <h1>Welcome Home</h1>
-      <p>
-        <button onClick={() => auth.signOut()}>Signout</button>
-      </p>
+      <Navbar />
+      <div id="appContents">
+        <Sidebar />
+        <TweetDisplay />
+      </div>
     </div>
   );
 };
