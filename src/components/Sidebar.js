@@ -17,18 +17,18 @@ export default class SideBar extends React.Component {
       <div id="sidebarContainer">
         <div id="profileInfo">
           <div id="usernameHolder">
-            <h2>{this.state.username}</h2>
+            <h2>JacobMolyneux</h2>
           </div>
           <div id="details">
-            <div>
+            <div className="DetailDiv">
               <p>Followers</p>
               <p>{this.state.followers}</p>
             </div>
-            <div>
+            <div className="DetailDiv">
               <p>Following</p>
               <p>{this.state.following}</p>
             </div>
-            <div>
+            <div className="DetailDiv">
               <p>Tweets</p>
               <p>{this.state.tweets}</p>
             </div>
@@ -40,7 +40,9 @@ export default class SideBar extends React.Component {
             <li className="actionButtons">Explore</li>
             <li className="actionButtons">Messages</li>
             <li className="actionButtons">
-              <button onClick={() => auth.signOut()}>Signout</button>
+              <button onClick={() => auth.signOut()} id="signOutButton">
+                Signout
+              </button>
             </li>
           </ul>
         </div>

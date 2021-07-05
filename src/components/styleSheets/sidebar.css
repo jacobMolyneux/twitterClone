@@ -1,13 +1,15 @@
 #sidebarContainer {
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
+  border-right: 1px solid rgb(167, 167, 167);
   width: 300px;
-  height: 600px;
+  height: 700px;
+  position: fixed;
 }
 #details {
   display: flex;
-  border: 1px solid black;
+  height: 100px;
+  justify-content: center;
 }
 #actionsBar {
   display: flex;
@@ -22,5 +24,16 @@
   padding: 4px;
   margin: 6px;
   font-size: 20px;
-  align-items: center;
+  text-align: center;
+}
+#signOutButton {
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+  border: transparent;
+  background: rgb(43, 202, 255);
+  color: white;
+}
+.DetailDiv {
+  margin: 4px;
 }

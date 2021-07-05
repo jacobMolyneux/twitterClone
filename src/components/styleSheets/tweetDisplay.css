@@ -1,4 +1,24 @@
 #tweetDisplayContainer {
-  border: 1px solid black;
   width: 600px;
+  position: relative;
+  left: 300px;
+  top: 80px;
+  margin: 10px;
+}
+#tweetInput {
+  width: 99%;
+
+  height: 125px;
+  font-size: 24px;
+}
+#submitButton {
+  width: 75px;
+  height: 30px;
+  border-radius: 10px;
+  border: transparent;
+  background: rgb(43, 202, 255);
+  color: white;
+  font-weight: bold;
+  margin: 3px;
+  margin-left: 5px;
 }

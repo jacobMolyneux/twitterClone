@@ -1,12 +1,18 @@
 #container {
-  border: 1px solid black;
+  border-bottom: 1px solid rgb(148, 148, 148);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  z-index: 2;
+  background: white;
+  width: 100%;
 }
 #logoHolder {
   margin: 20px;
   font-size: 30px;
+  color: rgb(43, 202, 255);
+  font-weight: bold;
 }
 #actionContainer {
   display: flex;

@@ -8,7 +8,12 @@ export default class TweetDisplay extends React.Component {
     super();
     this.state = {
       newestTweet: "",
-      tweetList: ["tweet1", "tweet2", "tweet3", "tweet4"],
+      tweetList: [
+        "This is a twitter Clone",
+        "I hope that you like it",
+        "You can see more things I've made on my github in at: https://github.com/jacobMolyneux",
+        "tweet4",
+      ],
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
