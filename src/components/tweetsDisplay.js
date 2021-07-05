@@ -2,10 +2,28 @@ import React from "react";
 import TweetCard from "./tweetCard.js";
 import TweetMap from "./tweetMap.js";
 import "./styleSheets/tweetDisplay.css";
+import firebase from "firebase";
+import { auth } from "../firebase";
+// Import Admin SDK
+// const auth = firebaseApp.auth();
+
+// Get a database reference to our blog
+
+function writeUserData(userId, name, email, tweet) {
+  firebase
+    .database()
+    .ref("users/" + userId)
+    .set({
+      username: name,
+      email: email,
+      tweet: tweet,
+    });
+}
 
 export default class TweetDisplay extends React.Component {
   constructor() {
     super();
+    const user = firebase.auth().currentUser;
     this.state = {
       newestTweet: "",
       tweetList: [
@@ -14,6 +32,9 @@ export default class TweetDisplay extends React.Component {
         "You can see more things I've made on my github in at: https://github.com/jacobMolyneux",
         "tweet4",
       ],
+      userId: user.id,
+      userName: "",
+      email: user.email,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -27,6 +48,16 @@ export default class TweetDisplay extends React.Component {
     this.setState({
       tweetList: this.state.tweetList.concat(this.state.newestTweet),
     });
+    writeUserData(
+      // this line below might get the user ID im not entirely sure
+      this.state.userId,
+      this.state.userName,
+      this.state.email,
+      this.state.newestTweet
+    );
+    console.log(
+      `this is a database Connection Check\nthe use ID is : ${this.state.userID} \n the user Email is: ${this.state.email}`
+    );
     console.log("handle submit was clicked");
     console.log(`the tweet list is now: ${this.state.tweetList}`);
   };
