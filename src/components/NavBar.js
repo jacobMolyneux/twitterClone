@@ -5,6 +5,7 @@ function Navbar() {
   return (
     <div id="container">
       <div id="logoHolder">Twitter Clone</div>
+      <div id="searchBar"></div>
       <div id="actionContainer">
         <ul id="list">
           <li className="listItem">Home</li>

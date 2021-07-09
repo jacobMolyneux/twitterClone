@@ -1,12 +1,33 @@
 .signin {
-  max-width: 300px;
   margin-left: auto;
   margin-right: auto;
+  border: 1px solid rgb(43, 202, 255);
+  margin-top: 50px;
+  border-radius: 10px;
+  height: 400px;
+  width: 350px;
+  align-items: center;
+}
+input {
+  width: 200px;
+  margin: 10px;
+  height: 25px;
 }
 .signin > form {
-  display: grid;
+  display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.signin > form > input {
-  margin-bottom: 5px;
+label {
+  font-size: 24px;
+}
+#signInButton {
+  border: 1px solid rgb(43, 202, 255);
+  background: rgb(43, 202, 255);
+  color: white;
+  font-size: 22px;
+  width: 200px;
+  height: 30px;
+  border-radius: 5px;
 }

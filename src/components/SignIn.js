@@ -41,10 +41,14 @@ const SignIn = () => {
     <div className="signin">
       <form action="">
         <h1>Sign in</h1>
+        <label>Username</label>
         <input ref={emailRef} type="email" />
+        <label>Password</label>
         <input ref={passwordRef} type="password" />
 
-        <button onClick={signIn}>Sign in</button>
+        <button id="signInButton" onClick={signIn}>
+          Sign in
+        </button>
         <h6>
           Not yet register?{" "}
           <span className="signin__link" onClick={signUp}>
