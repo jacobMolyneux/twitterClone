@@ -1,23 +1,32 @@
 import React from "react";
 import { auth } from "../firebase";
 import "./styleSheets/sidebar.css";
+import firebase from "firebase";
 
 export default class SideBar extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      username: this.props.name,
+      username: this.props.username,
       followers: 0,
       following: 0,
       tweets: 0,
     };
+    let userIcon = this.state.username.charAt(0);
   }
+
   render() {
     return (
       <div id="sidebarContainer">
         <div id="profileInfo">
-          <div id="usernameHolder">
-            <h2>JacobMolyneux</h2>
+          <div id="userIconandNameDiv">
+            <div id="profileIcon">
+              {this.state.username.charAt(0).toUpperCase()}
+            </div>
+            <div id="usernameHolder">
+              <h2>{this.state.username}</h2>
+            </div>
           </div>
           <div id="details">
             <div className="DetailDiv">

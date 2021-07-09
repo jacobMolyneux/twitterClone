@@ -1,11 +1,15 @@
 import "./styleSheets/tweetMap.css";
 export default function TweetMap(props) {
+  const username = props.username;
   const tweetsArray = props.tweets;
-  const tweets = tweetsArray.reverse();
+  const tweets = tweetsArray;
   const listItems = tweets.map((tweet, index) => (
     <li id="listedTweet">
       <div id="tweetHolder">
-        <h2 id="userNameDisplay">Username</h2>
+        <div id="userDiv">
+          <div id="userIcon">{username.charAt(0).toUpperCase()}</div>
+          <h2 id="userNameDisplay">{username}</h2>
+        </div>
         <p id="tweetContent" key={index}>
           {tweet}
         </p>

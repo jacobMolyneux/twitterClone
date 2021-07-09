@@ -1,5 +1,5 @@
 import React from "react";
-import TweetCard from "./tweetCard.js";
+
 import TweetMap from "./tweetMap.js";
 import "./styleSheets/tweetDisplay.css";
 import firebase from "firebase";
@@ -77,7 +77,10 @@ export default class TweetDisplay extends React.Component {
           </form>
         </div>
         <div id="tweetDisplay">
-          <TweetMap tweets={this.state.tweetList} />
+          <TweetMap
+            tweets={this.state.tweetList.reverse()}
+            username={this.state.email}
+          />
         </div>
       </div>
     );

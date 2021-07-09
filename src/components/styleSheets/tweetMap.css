@@ -25,3 +25,24 @@
 #tweetContent {
   padding-left: 40px;
 }
+#userDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid grey;
+}
+#userIcon {
+  display: flex;
+  height: 30px;
+  width: 30px;
+
+  background: rgb(43, 202, 255);
+  color: white;
+  font-size: 26px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  border-radius: 100%;
+  margin-left: 30px;
+  margin-right: 30px;
+}
