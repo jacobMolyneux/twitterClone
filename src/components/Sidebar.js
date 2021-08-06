@@ -48,6 +48,11 @@ export default class SideBar extends React.Component {
             <li className="actionButtons">Home</li>
             <li className="actionButtons">Explore</li>
             <li className="actionButtons">Messages</li>
+            <li className="actionButtons">Notifications</li>
+            <li className="actionButtons">Bookmarks</li>
+            <li className="actionButtons">Lists</li>
+            <li className="actionButtons">Profile</li>
+
             <li className="actionButtons">
               <button onClick={() => auth.signOut()} id="signOutButton">
                 Signout

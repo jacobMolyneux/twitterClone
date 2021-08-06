@@ -10,7 +10,6 @@ const Home = () => {
   const user = firebase.auth().currentUser;
   return (
     <div>
-      <Navbar />
       <div id="appContents">
         <Sidebar username={user.email} />
         <TweetDisplay />

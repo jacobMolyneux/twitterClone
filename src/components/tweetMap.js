@@ -1,4 +1,7 @@
 import "./styleSheets/tweetMap.css";
+import heartImage from "./images/heart.png";
+import retweetImage from "./images/retweet.png";
+import commentImage from "./images/speech-bubble.png";
 export default function TweetMap(props) {
   const username = props.username;
   const tweetsArray = props.tweets;
@@ -14,9 +17,15 @@ export default function TweetMap(props) {
           {tweet}
         </p>
         <div id="actionButtons">
-          <div className="actionButton">Like</div>
-          <div className="actionButton">Retweet</div>
-          <div className="actionButton">Comment</div>
+          <div className="actionButton">
+            <img className="actionImage" src={heartImage} />
+          </div>
+          <div className="actionButton">
+            <img src={retweetImage} className="actionImage" />
+          </div>
+          <div className="actionButton">
+            <img src={commentImage} className="actionImage" />
+          </div>
         </div>
       </div>
     </li>

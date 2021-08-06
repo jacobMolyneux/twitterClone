@@ -48,6 +48,7 @@ export default class TweetDisplay extends React.Component {
     this.setState({
       tweetList: this.state.tweetList.concat(this.state.newestTweet),
     });
+    e.target.value = "";
     writeUserData(
       // this line below might get the user ID im not entirely sure
       this.state.userId,
@@ -65,15 +66,16 @@ export default class TweetDisplay extends React.Component {
     return (
       <div id="tweetDisplayContainer">
         <div id="tweetInputSection">
-          <form>
-            <input
-              type="text"
-              id="tweetInput"
-              onChange={this.handleChange}
-            ></input>
-            <button id="submitButton" onClick={this.handleSubmit}>
-              Submit
-            </button>
+          <form onSubmit={this.handleSubmit}>
+            <label>
+              Tweet:
+              <input
+                type="text"
+                value={this.state.value}
+                onChange={this.handleChange}
+              ></input>
+            </label>
+            <input type="submit" Value="tweet"></input>
           </form>
         </div>
         <div id="tweetDisplay">

@@ -2,12 +2,10 @@
   width: 600px;
   position: relative;
   left: 300px;
-  top: 80px;
   margin: 10px;
 }
 #tweetInput {
   width: 99%;
-
   height: 125px;
   font-size: 24px;
 }
