@@ -15,7 +15,6 @@ export default class SideBar extends React.Component {
     };
     let userIcon = this.state.username.charAt(0);
   }
-
   render() {
     return (
       <div id="sidebarContainer">

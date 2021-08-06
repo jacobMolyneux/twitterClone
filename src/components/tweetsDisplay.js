@@ -3,20 +3,22 @@ import React from "react";
 import TweetMap from "./tweetMap.js";
 import "./styleSheets/tweetDisplay.css";
 import firebase from "firebase";
-import { auth } from "../firebase";
+import auth from "firebase";
+var database = firebase.database();
+
+// var userId = firebase.auth().currentUser.uid;
 // Import Admin SDK
-// const auth = firebaseApp.auth();
 
 // Get a database reference to our blog
 
-function writeUserData(userId, name, email, tweet) {
+function addTweetToDatabase(name, email, tweetContent, userId) {
   firebase
     .database()
     .ref("users/" + userId)
     .set({
       username: name,
       email: email,
-      tweet: tweet,
+      tweet: tweetContent,
     });
 }
 
@@ -32,7 +34,7 @@ export default class TweetDisplay extends React.Component {
         "You can see more things I've made on my github in at: https://github.com/jacobMolyneux",
         "tweet4",
       ],
-      userId: user.id,
+      userId: firebase.auth.userID,
       userName: "",
       email: user.email,
     };
@@ -42,6 +44,13 @@ export default class TweetDisplay extends React.Component {
   handleChange = (e) => {
     e.preventDefault();
     this.setState({ newestTweet: e.target.value });
+    addTweetToDatabase(
+      this.state.userName,
+      this.state.email,
+      this.state.newestTweet,
+      firebase.auth.userID
+    );
+    console.log("the user id is : " + "");
   };
   handleSubmit = (e) => {
     e.preventDefault();
@@ -49,19 +58,13 @@ export default class TweetDisplay extends React.Component {
       tweetList: this.state.tweetList.concat(this.state.newestTweet),
     });
     e.target.value = "";
-    writeUserData(
-      // this line below might get the user ID im not entirely sure
-      this.state.userId,
-      this.state.userName,
-      this.state.email,
-      this.state.newestTweet
-    );
     console.log(
       `this is a database Connection Check\nthe use ID is : ${this.state.userID} \n the user Email is: ${this.state.email}`
     );
     console.log("handle submit was clicked");
     console.log(`the tweet list is now: ${this.state.tweetList}`);
   };
+
   render() {
     return (
       <div id="tweetDisplayContainer">
@@ -79,10 +82,7 @@ export default class TweetDisplay extends React.Component {
           </form>
         </div>
         <div id="tweetDisplay">
-          <TweetMap
-            tweets={this.state.tweetList.reverse()}
-            username={this.state.email}
-          />
+          <TweetMap tweets={this.state.tweetList} username={this.state.email} />
         </div>
       </div>
     );
